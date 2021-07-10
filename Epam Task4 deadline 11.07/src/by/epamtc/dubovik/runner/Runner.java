@@ -148,6 +148,7 @@ public class Runner {
 					return planeList;
 				}
 			});
+			
 			if(options.containsKey(currentOption)) {
 				currentPlaneList = options.get(currentOption).run(currentPlaneList);
 			}
