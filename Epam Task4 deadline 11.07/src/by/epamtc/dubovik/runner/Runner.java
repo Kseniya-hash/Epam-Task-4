@@ -78,7 +78,7 @@ public class Runner {
 			
 			options.put(2, new Option() {
 				public List<Plane> run(List<Plane> planeList){
-					if(planeList != null) {
+					if(planeList != null && !planeList.isEmpty() ) {
 						System.out.println(read.receiveString(planeList));
 					} else {
 						System.out.println("Список пустой");
@@ -148,8 +148,9 @@ public class Runner {
 					return planeList;
 				}
 			});
-				
-			currentPlaneList = options.get(currentOption).run(currentPlaneList);
+			if(options.containsKey(currentOption)) {
+				currentPlaneList = options.get(currentOption).run(currentPlaneList);
+			}
 		}
 	}
 }
